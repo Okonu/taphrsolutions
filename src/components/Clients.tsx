@@ -1,4 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Clients = () => {
   const clientTypes = [
@@ -42,27 +44,40 @@ const Clients = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {clientTypes.map((client, index) => (
-              <Card 
-                key={index} 
-                className="shadow-card hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {client.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    {client.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {client.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Carousel
+            className="w-full max-w-6xl mx-auto mb-12"
+            plugins={[
+              Autoplay({
+                delay: 4000,
+              }),
+            ]}
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {clientTypes.map((client, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <Card className="shadow-card hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 h-full">
+                    <CardContent className="p-6 text-center h-full flex flex-col">
+                      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        {client.icon}
+                      </div>
+                      <h3 className="text-lg font-bold text-foreground mb-3">
+                        {client.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
+                        {client.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
 
           {/* Statement of Service */}
           <Card className="shadow-card bg-gradient-card">

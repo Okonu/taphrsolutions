@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 
 const Services = () => {
   const trainingServices = [
@@ -55,51 +57,68 @@ const Services = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
-            {/* Training Solutions */}
-            <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-scale-in">
-              <CardHeader className="pb-4">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-primary-foreground text-2xl">🎓</span>
-                  </div>
-                  <CardTitle className="text-2xl text-foreground">Training Solutions</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="space-y-3">
-                  {trainingServices.map((service, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-muted-foreground text-sm leading-relaxed">{service}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <Tabs defaultValue="training" className="w-full mb-12">
+            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+              <TabsTrigger value="training" className="flex items-center gap-2">
+                <span className="text-xl">🎓</span>
+                Training Solutions
+              </TabsTrigger>
+              <TabsTrigger value="consultancy" className="flex items-center gap-2">
+                <span className="text-xl">💼</span>
+                Consultancy Services
+              </TabsTrigger>
+            </TabsList>
 
-            {/* Consultancy Services */}
-            <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-scale-in">
-              <CardHeader className="pb-4">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mr-4">
-                    <span className="text-accent-foreground text-2xl">💼</span>
+            <TabsContent value="training" className="animate-fade-in">
+              <Card className="shadow-card hover:shadow-lg transition-all duration-300">
+                <CardHeader className="text-center pb-6">
+                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-primary-foreground text-3xl">🎓</span>
                   </div>
-                  <CardTitle className="text-2xl text-foreground">Consultancy Services</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <div className="space-y-3">
-                  {consultancyServices.map((service, index) => (
-                    <div key={index} className="flex items-start">
-                      <div className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></div>
-                      <span className="text-muted-foreground text-sm leading-relaxed">{service}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                  <CardTitle className="text-3xl text-foreground">Training Solutions</CardTitle>
+                  <p className="text-muted-foreground">Comprehensive programs to develop your team's capabilities</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {trainingServices.map((service, index) => (
+                      <Badge 
+                        key={index} 
+                        variant="secondary" 
+                        className="p-3 h-auto text-sm font-normal justify-start hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
+                      >
+                        {service}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+
+            <TabsContent value="consultancy" className="animate-fade-in">
+              <Card className="shadow-card hover:shadow-lg transition-all duration-300">
+                <CardHeader className="text-center pb-6">
+                  <div className="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-accent-foreground text-3xl">💼</span>
+                  </div>
+                  <CardTitle className="text-3xl text-foreground">Consultancy Services</CardTitle>
+                  <p className="text-muted-foreground">Strategic solutions for organizational transformation</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    {consultancyServices.map((service, index) => (
+                      <Badge 
+                        key={index} 
+                        variant="secondary" 
+                        className="p-3 h-auto text-sm font-normal justify-start hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+                      >
+                        {service}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
 
           {/* CTA */}
           <div className="text-center">

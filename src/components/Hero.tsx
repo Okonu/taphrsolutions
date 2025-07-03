@@ -28,35 +28,68 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 text-center text-primary-foreground">
-        <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+        <div className="max-w-5xl mx-auto animate-fade-in">
+          <div className="mb-8">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
+              <span className="text-sm font-medium">🚀 Transforming Organizations Across Africa</span>
+            </div>
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
             Tap HR Solutions Ltd
           </h1>
-          <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
-            "Empowering People and Elevating Performance"
-          </p>
-          <p className="text-lg md:text-xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-80">
+          
+          <div className="relative mb-8">
+            <p className="text-2xl md:text-3xl lg:text-4xl mb-2 leading-relaxed font-light">
+              "Empowering People and
+            </p>
+            <p className="text-2xl md:text-3xl lg:text-4xl mb-8 leading-relaxed font-light">
+              Elevating Performance"
+            </p>
+            <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
+          </div>
+          
+          <p className="text-lg md:text-xl mb-12 max-w-4xl mx-auto leading-relaxed opacity-90">
             Leading training and consultancy firm specializing in human capital development, 
             organizational effectiveness, and strategic workforce solutions across Africa.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
             <Button 
               variant="accent" 
               size="xl"
               onClick={scrollToServices}
-              className="min-w-[200px]"
+              className="min-w-[220px] group"
             >
-              Our Services
+              <span className="mr-2">Discover Our Services</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Button>
             <Button 
               variant="outline" 
               size="xl"
               onClick={scrollToContact}
-              className="min-w-[200px] border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="min-w-[220px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary group"
             >
-              Get In Touch
+              <span className="mr-2">Start Your Journey</span>
+              <span className="group-hover:scale-110 transition-transform">✨</span>
             </Button>
+          </div>
+          
+          <div className="flex justify-center items-center gap-8 text-sm opacity-80">
+            <div className="text-center">
+              <p className="font-semibold">500+</p>
+              <p>Clients Served</p>
+            </div>
+            <div className="w-px h-8 bg-white/30"></div>
+            <div className="text-center">
+              <p className="font-semibold">15+</p>
+              <p>Years Experience</p>
+            </div>
+            <div className="w-px h-8 bg-white/30"></div>
+            <div className="text-center">
+              <p className="font-semibold">100%</p>
+              <p>Client Satisfaction</p>
+            </div>
           </div>
         </div>
 

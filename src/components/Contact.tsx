@@ -1,5 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 
 const Contact = () => {
   return (
@@ -15,114 +16,170 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Contact Information */}
-            <div className="space-y-8">
-              <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-scale-in">
-                <CardContent className="p-6">
-                  <h3 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h3>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center mr-4">
-                        <span className="text-primary-foreground text-lg">📍</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Location</p>
-                        <p className="text-muted-foreground">Nairobi, Kenya</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center mr-4">
-                        <span className="text-primary-foreground text-lg">📞</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Phone</p>
-                        <p className="text-muted-foreground">+254 7XX XXX XXX</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center mr-4">
-                        <span className="text-primary-foreground text-lg">📧</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Email</p>
-                        <p className="text-muted-foreground">info@taphrsolutions.co.ke</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gradient-hero rounded-lg flex items-center justify-center mr-4">
-                        <span className="text-primary-foreground text-lg">🌐</span>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground">Website</p>
-                        <p className="text-muted-foreground">www.taphrsolutions.co.ke</p>
-                      </div>
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            {/* Company Info Card */}
+            <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-fade-in lg:col-span-1">
+              <CardHeader className="text-center">
+                <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <span className="text-primary-foreground text-2xl">🏢</span>
+                </div>
+                <CardTitle className="text-xl text-foreground">Tap HR Solutions Ltd</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-3">
+                  <div className="flex items-center p-3 rounded-lg bg-muted">
+                    <span className="text-xl mr-3">📍</span>
+                    <div>
+                      <p className="font-medium text-foreground">Nairobi, Kenya</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              {/* Social Media */}
-              <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-scale-in">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-4">Follow Us</h3>
-                  <div className="flex space-x-4">
-                    <Button variant="outline" size="sm" className="flex items-center">
-                      <span className="mr-2">📘</span>
+                  
+                  <div className="flex items-center p-3 rounded-lg bg-muted">
+                    <span className="text-xl mr-3">📞</span>
+                    <div>
+                      <p className="font-medium text-foreground">+254 7XX XXX XXX</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center p-3 rounded-lg bg-muted">
+                    <span className="text-xl mr-3">📧</span>
+                    <div>
+                      <p className="font-medium text-foreground">info@taphrsolutions.co.ke</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center p-3 rounded-lg bg-muted">
+                    <span className="text-xl mr-3">🌐</span>
+                    <div>
+                      <p className="font-medium text-foreground">www.taphrsolutions.co.ke</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="pt-4 border-t border-border">
+                  <p className="text-sm font-medium text-foreground mb-3">Follow Us</p>
+                  <div className="flex gap-2">
+                    <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
                       LinkedIn
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex items-center">
-                      <span className="mr-2">📷</span>
+                    </Badge>
+                    <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
                       Instagram
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex items-center">
-                      <span className="mr-2">🐦</span>
+                    </Badge>
+                    <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
                       Twitter
-                    </Button>
+                    </Badge>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                </div>
+              </CardContent>
+            </Card>
 
-            {/* CTA Section */}
-            <div className="lg:sticky lg:top-8">
-              <Card className="shadow-card bg-gradient-card">
-                <CardContent className="p-8 text-center">
-                  <h3 className="text-2xl font-bold text-foreground mb-4">
-                    Ready to Get Started?
-                  </h3>
-                  <p className="text-muted-foreground mb-8 leading-relaxed">
-                    Let's discuss how we can help empower your people and elevate your organization's performance. 
-                    Our team is ready to create a customized solution for your specific needs.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    <Button variant="professional" size="lg" className="w-full">
-                      Schedule a Consultation
-                    </Button>
-                    <Button variant="outline" size="lg" className="w-full">
-                      Request a Proposal
-                    </Button>
+            {/* Contact Form */}
+            <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-scale-in lg:col-span-2">
+              <CardHeader>
+                <div className="text-center mb-4">
+                  <div className="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <span className="text-accent-foreground text-2xl">💬</span>
                   </div>
+                  <CardTitle className="text-2xl text-foreground">Let's Start a Conversation</CardTitle>
+                  <p className="text-muted-foreground mt-2">Ready to empower your people and elevate performance? We'd love to hear from you.</p>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">First Name *</label>
+                    <input 
+                      type="text" 
+                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
+                      placeholder="John"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">Last Name *</label>
+                    <input 
+                      type="text" 
+                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">Email *</label>
+                    <input 
+                      type="email" 
+                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-2">Phone</label>
+                    <input 
+                      type="tel" 
+                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
+                      placeholder="+254 XXX XXX XXX"
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Organization</label>
+                  <input 
+                    type="text" 
+                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
+                    placeholder="Your Company Name"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">How can we help you? *</label>
+                  <textarea 
+                    rows={4}
+                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary resize-none"
+                    placeholder="Tell us about your training or consultancy needs..."
+                  />
+                </div>
+                
+                <Button variant="professional" size="lg" className="w-full">
+                  <span className="mr-2">Send Message</span>
+                  <span>🚀</span>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
 
-                  <div className="mt-8 pt-6 border-t border-border">
-                    <p className="text-sm text-muted-foreground">
-                      Or send us an email at{" "}
-                      <a 
-                        href="mailto:info@taphrsolutions.co.ke" 
-                        className="text-primary hover:underline font-semibold"
-                      >
-                        info@taphrsolutions.co.ke
-                      </a>
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+          {/* Quick Actions */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card className="shadow-card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <span className="text-primary-foreground text-xl">📅</span>
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">Schedule Consultation</h3>
+                <p className="text-sm text-muted-foreground">Book a free consultation call</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <span className="text-accent-foreground text-xl">📋</span>
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">Request Proposal</h3>
+                <p className="text-sm text-muted-foreground">Get a customized solution</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="shadow-card hover:shadow-lg transition-all duration-300 group cursor-pointer">
+              <CardContent className="p-6 text-center">
+                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                  <span className="text-primary-foreground text-xl">💬</span>
+                </div>
+                <h3 className="font-semibold text-foreground mb-2">Quick Chat</h3>
+                <p className="text-sm text-muted-foreground">Start a conversation today</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
