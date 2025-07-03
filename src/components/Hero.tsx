@@ -68,7 +68,7 @@ const Hero = () => {
               variant="outline" 
               size="xl"
               onClick={scrollToContact}
-              className="min-w-[220px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              className="min-w-[220px] border-2 border-primary-foreground text-primary-foreground"
             >
               <span className="mr-2">Start Your Journey</span>
             </Button>
