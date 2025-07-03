@@ -40,10 +40,11 @@
     --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 15% 98%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 25% 98%));
 
-    /* Professional shadows */
-    --shadow-card: 0 4px 20px -2px hsl(210 25% 25% / 0.1);
-    --shadow-button: 0 2px 8px -1px hsl(210 100% 40% / 0.3);
+    /* Professional shadows - inspired by major consultancy sites */
+    --shadow-card: 0 4px 25px -5px hsl(210 25% 25% / 0.12);
+    --shadow-button: 0 4px 14px -2px hsl(210 100% 40% / 0.25);
     --shadow-hero: 0 25px 50px -12px hsl(210 100% 40% / 0.25);
+    --shadow-elevated: 0 10px 40px -10px hsl(210 25% 25% / 0.15);
 
     /* Professional spacing and sizing */
     --section-padding: 5rem 0;

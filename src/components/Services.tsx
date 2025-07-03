@@ -57,68 +57,84 @@ const Services = () => {
             </p>
           </div>
 
-          <Tabs defaultValue="training" className="w-full mb-12">
-            <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-              <TabsTrigger value="training" className="flex items-center gap-2">
-                <span className="text-xl">🎓</span>
-                Training Solutions
-              </TabsTrigger>
-              <TabsTrigger value="consultancy" className="flex items-center gap-2">
-                <span className="text-xl">💼</span>
-                Consultancy Services
-              </TabsTrigger>
-            </TabsList>
+          <div className="max-w-5xl mx-auto">
+            <Tabs defaultValue="training" className="w-full mb-12">
+              <TabsList className="grid w-full max-w-lg mx-auto grid-cols-2 mb-12 h-14 p-1 bg-muted/50">
+                <TabsTrigger value="training" className="flex items-center gap-3 h-12 px-6 data-[state=active]:bg-background data-[state=active]:shadow-sm text-base font-medium">
+                  <span className="text-xl">🎓</span>
+                  Training Solutions
+                </TabsTrigger>
+                <TabsTrigger value="consultancy" className="flex items-center gap-3 h-12 px-6 data-[state=active]:bg-background data-[state=active]:shadow-sm text-base font-medium">
+                  <span className="text-xl">💼</span>
+                  Consultancy Services
+                </TabsTrigger>
+              </TabsList>
 
-            <TabsContent value="training" className="animate-fade-in">
-              <Card className="shadow-card hover:shadow-lg transition-all duration-300">
-                <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-primary-foreground text-3xl">🎓</span>
+              <TabsContent value="training" className="animate-fade-in">
+                <div className="text-center mb-12">
+                  <div className="w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <span className="text-primary-foreground text-4xl">🎓</span>
                   </div>
-                  <CardTitle className="text-3xl text-foreground">Training Solutions</CardTitle>
-                  <p className="text-muted-foreground">Comprehensive programs to develop your team's capabilities</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {trainingServices.map((service, index) => (
-                      <Badge 
-                        key={index} 
-                        variant="secondary" 
-                        className="p-3 h-auto text-sm font-normal justify-start hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer"
-                      >
-                        {service}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Training Solutions</h3>
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    Comprehensive learning programs designed to unlock potential and drive performance across your organization
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+                  {trainingServices.map((service, index) => (
+                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary hover:border-l-primary-hover">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                              {service}
+                            </h4>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              Expert-led training to enhance capabilities and drive results
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
 
-            <TabsContent value="consultancy" className="animate-fade-in">
-              <Card className="shadow-card hover:shadow-lg transition-all duration-300">
-                <CardHeader className="text-center pb-6">
-                  <div className="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-accent-foreground text-3xl">💼</span>
+              <TabsContent value="consultancy" className="animate-fade-in">
+                <div className="text-center mb-12">
+                  <div className="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <span className="text-accent-foreground text-4xl">💼</span>
                   </div>
-                  <CardTitle className="text-3xl text-foreground">Consultancy Services</CardTitle>
-                  <p className="text-muted-foreground">Strategic solutions for organizational transformation</p>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {consultancyServices.map((service, index) => (
-                      <Badge 
-                        key={index} 
-                        variant="secondary" 
-                        className="p-3 h-auto text-sm font-normal justify-start hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
-                      >
-                        {service}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </Tabs>
+                  <h3 className="text-3xl font-bold text-foreground mb-4">Consultancy Services</h3>
+                  <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                    Strategic consulting solutions to transform your organization and optimize performance
+                  </p>
+                </div>
+                
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
+                  {consultancyServices.map((service, index) => (
+                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-accent hover:border-l-accent/80">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
+                          <div>
+                            <h4 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                              {service}
+                            </h4>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              Strategic guidance to drive organizational transformation
+                            </p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </TabsContent>
+            </Tabs>
+          </div>
 
           {/* CTA */}
           <div className="text-center">

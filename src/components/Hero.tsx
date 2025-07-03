@@ -68,10 +68,9 @@ const Hero = () => {
               variant="outline" 
               size="xl"
               onClick={scrollToContact}
-              className="min-w-[220px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary group"
+              className="min-w-[220px] border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
             >
               <span className="mr-2">Start Your Journey</span>
-              <span className="group-hover:scale-110 transition-transform">✨</span>
             </Button>
           </div>
           
@@ -90,13 +89,6 @@ const Hero = () => {
               <p className="font-semibold">100%</p>
               <p>Client Satisfaction</p>
             </div>
-          </div>
-        </div>
-
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-primary-foreground rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-primary-foreground rounded-full mt-2"></div>
           </div>
         </div>
       </div>
