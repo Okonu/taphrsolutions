@@ -22,7 +22,7 @@ const Header = () => {
             <img
               src={churdLogo}
               alt="CHURD Africa – Centre for Human Resource Development Africa"
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </div>
 
