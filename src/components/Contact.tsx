@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import churdLogo from "@/assets/churd-logo.jpeg";
 
 const Contact = () => {
   return (
@@ -21,11 +22,11 @@ const Contact = () => {
             {/* Company Info */}
             <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-fade-in lg:col-span-1">
               <CardHeader className="text-center">
-                <div className="w-16 h-16 bg-gradient-hero rounded-xl flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white text-2xl">🏢</span>
-                </div>
-                <CardTitle className="text-xl text-foreground">CHURD Africa</CardTitle>
-                <p className="text-xs text-muted-foreground">Centre for Human Resource Development Africa</p>
+                <img
+                  src={churdLogo}
+                  alt="CHURD Africa"
+                  className="h-24 w-auto object-contain mx-auto mb-2"
+                />
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="space-y-3">
