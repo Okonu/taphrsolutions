@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import churdLogo from "@/assets/churd-logo.jpeg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,15 +18,12 @@ const Header = () => {
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <div className="flex flex-col leading-none">
-              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-[hsl(25,90%,50%)] to-[hsl(248,56%,29%)] bg-clip-text text-transparent">
-                CHURD
-              </span>
-              <span className="text-[9px] font-semibold text-[hsl(248,56%,29%)] tracking-wide uppercase leading-tight">
-                Centre for Human Resource Development Africa
-              </span>
-            </div>
+          <div className="flex items-center">
+            <img
+              src={churdLogo}
+              alt="CHURD Africa – Centre for Human Resource Development Africa"
+              className="h-14 w-auto object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}
