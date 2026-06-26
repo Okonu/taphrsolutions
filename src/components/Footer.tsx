@@ -1,3 +1,5 @@
+import churdLogo from "@/assets/churd-logo.jpeg";
+
 const Footer = () => {
   const scrollTo = (id: string) => {
     const element = document.getElementById(id);
@@ -11,12 +13,11 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="mb-4">
-              <span className="text-3xl font-black tracking-tight bg-gradient-to-r from-[hsl(25,90%,72%)] to-white bg-clip-text text-transparent">
-                CHURD
-              </span>
-              <p className="text-xs font-semibold text-primary-foreground/70 uppercase tracking-wide mt-0.5">
-                Centre for Human Resource Development Africa
-              </p>
+              <img
+                src={churdLogo}
+                alt="CHURD Africa"
+                className="h-20 w-auto object-contain bg-white rounded-lg p-1"
+              />
             </div>
             <p className="text-primary-foreground/75 leading-relaxed text-sm max-w-sm">
               Empowering People. Strengthening Institutions. Transforming Africa. We design and deliver innovative, technology-enabled development solutions that drive measurable performance and sustainable growth.
