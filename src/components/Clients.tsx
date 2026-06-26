@@ -3,49 +3,50 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import Autoplay from "embla-carousel-autoplay";
 
 const Clients = () => {
-  const clientTypes = [
+  const partners = [
     {
       icon: "🏛️",
-      title: "Government Agencies",
-      description: "Ministries, Departments and Government Agencies"
+      title: "Governments & Public Institutions",
+      description: "Ministries, departments, agencies, and public sector bodies across Africa"
     },
     {
-      icon: "🏢", 
-      title: "Private Sector",
-      description: "Corporates and SMEs across various industries"
+      icon: "🏢",
+      title: "Corporations",
+      description: "Large corporations and SMEs across diverse industries and sectors"
     },
     {
       icon: "🌍",
-      title: "NGOs & Foundations", 
-      description: "Non-profits and Development Partners"
+      title: "Development Organizations",
+      description: "NGOs, international development agencies, and foundations"
     },
     {
       icon: "🎓",
-      title: "Education & Healthcare",
-      description: "Educational and Healthcare Institutions"
+      title: "Education & Research Institutions",
+      description: "Universities, training institutes, and research organizations"
     },
     {
-      icon: "🚀",
-      title: "Startups & Social Impact",
-      description: "Emerging businesses and Social Enterprises"
+      icon: "🤝",
+      title: "Corporate Partnerships",
+      description: "Strategic partners co-creating impactful learning solutions"
     }
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="partners" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Our Clients
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Partnerships
             </h2>
+            <div className="w-16 h-1 bg-accent mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We serve organizations seeking to grow through people across diverse sectors and industries.
+              We partner with governments, corporations, and development organizations committed to building capable leaders, high-performing teams, and resilient institutions.
             </p>
           </div>
 
           <Carousel
-            className="w-full max-w-6xl mx-auto mb-12"
+            className="w-full max-w-6xl mx-auto mb-14"
             plugins={[
               Autoplay({
                 delay: 4000,
@@ -57,18 +58,18 @@ const Clients = () => {
             }}
           >
             <CarouselContent className="-ml-2 md:-ml-4">
-              {clientTypes.map((client, index) => (
+              {partners.map((partner, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                   <Card className="shadow-card hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 h-full">
                     <CardContent className="p-6 text-center h-full flex flex-col">
-                      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                        {client.icon}
+                      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        {partner.icon}
                       </div>
-                      <h3 className="text-lg font-bold text-foreground mb-3">
-                        {client.title}
+                      <h3 className="text-base font-bold text-foreground mb-3">
+                        {partner.title}
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed flex-grow">
-                        {client.description}
+                        {partner.description}
                       </p>
                     </CardContent>
                   </Card>
@@ -79,17 +80,15 @@ const Clients = () => {
             <CarouselNext className="hidden md:flex" />
           </Carousel>
 
-          {/* Statement of Service */}
-          <Card className="shadow-card bg-gradient-card">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl font-bold text-foreground mb-6">Statement of Service</h3>
-              <p className="text-muted-foreground leading-relaxed mb-6 max-w-4xl mx-auto">
-                At Tap HR Solutions Ltd, we are committed to purpose-driven delivery. Whether through powerful 
-                learning experiences or strategic consulting, we ensure that every engagement leads to measurable 
-                progress. We don't just provide services — we enable transformation.
+          {/* Statement */}
+          <Card className="shadow-elevated bg-gradient-to-r from-primary/5 to-accent/5 border-none">
+            <CardContent className="p-10 text-center">
+              <h3 className="text-2xl font-bold text-foreground mb-5">Ready to Strengthen Your Institution?</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4 max-w-4xl mx-auto text-lg">
+                At CHURD Africa, our purpose is to unlock human potential, inspire excellence, and cultivate a culture of continuous learning that transforms individuals, strengthens institutions, and accelerates Africa's development.
               </p>
               <p className="text-lg font-semibold text-primary">
-                Our goal is simple: Empower people. Enhance performance. Drive sustainable results.
+                Creating measurable value and lasting impact — wherever we work.
               </p>
             </CardContent>
           </Card>

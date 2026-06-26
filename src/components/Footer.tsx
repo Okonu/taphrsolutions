@@ -1,88 +1,82 @@
 const Footer = () => {
+  const scrollTo = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) element.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-primary text-primary-foreground py-12">
+    <footer className="bg-primary text-primary-foreground py-14">
       <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">T</span>
-              </div>
-              <span className="text-xl font-bold">Tap HR Solutions</span>
+        <div className="grid md:grid-cols-4 gap-10 mb-10">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <div className="mb-4">
+              <span className="text-3xl font-black tracking-tight bg-gradient-to-r from-[hsl(25,90%,72%)] to-white bg-clip-text text-transparent">
+                CHURD
+              </span>
+              <p className="text-xs font-semibold text-primary-foreground/70 uppercase tracking-wide mt-0.5">
+                Centre for Human Resource Development Africa
+              </p>
             </div>
-            <p className="text-primary-foreground/80 leading-relaxed">
-              Empowering People and Elevating Performance across Africa through 
-              innovative training and strategic consultancy solutions.
+            <p className="text-primary-foreground/75 leading-relaxed text-sm max-w-sm">
+              Empowering People. Strengthening Institutions. Transforming Africa. We design and deliver innovative, technology-enabled development solutions that drive measurable performance and sustainable growth.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById('about');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById('services');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Services
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById('values');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Values
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => {
-                    const element = document.getElementById('contact');
-                    if (element) element.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-                >
-                  Contact
-                </button>
-              </li>
+            <h3 className="text-base font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2 text-sm">
+              {[
+                { label: "About Us", id: "about" },
+                { label: "Learning & Development", id: "programmes" },
+                { label: "Programmes", id: "programmes" },
+                { label: "Partnerships", id: "partners" },
+                { label: "Contact Us", id: "contact" },
+              ].map((link) => (
+                <li key={link.label}>
+                  <button
+                    onClick={() => scrollTo(link.id)}
+                    className="text-primary-foreground/70 hover:text-primary-foreground transition-colors"
+                  >
+                    {link.label}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact Info</h3>
-            <div className="space-y-2 text-primary-foreground/80">
-              <p>📍 Nairobi, Kenya</p>
-              <p>📞 +254 7XX XXX XXX</p>
-              <p>📧 info@taphrsolutions.co.ke</p>
-              <p>🌐 www.taphrsolutions.co.ke</p>
+            <h3 className="text-base font-bold mb-4">Contact Info</h3>
+            <div className="space-y-2 text-primary-foreground/75 text-sm">
+              <p>📧 info@churdafrica.com</p>
+              <p>🌐 www.churdafrica.com</p>
+              <p>🌍 Africa</p>
+            </div>
+            <div className="mt-5">
+              <p className="text-sm font-semibold mb-2">Follow Us</p>
+              <div className="flex gap-3">
+                {["LinkedIn", "Twitter", "Facebook"].map((social) => (
+                  <span
+                    key={social}
+                    className="text-xs px-2 py-1 rounded bg-primary-foreground/10 hover:bg-primary-foreground/20 cursor-pointer transition-colors"
+                  >
+                    {social}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-primary-foreground/60">
-            &copy; {new Date().getFullYear()} Tap HR Solutions Ltd. All rights reserved.
+        {/* Bottom CTA */}
+        <div className="border-t border-primary-foreground/15 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-primary-foreground/50 text-sm">
+            &copy; {new Date().getFullYear()} CHURD Africa. All rights reserved.
+          </p>
+          <p className="text-primary-foreground/60 text-sm font-medium">
+            Advancing Learning, Transforming Futures
           </p>
         </div>
       </div>

@@ -13,44 +13,59 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-6 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
+      <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-hero rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">T</span>
+          {/* Logo */}
+          <div className="flex items-center space-x-3">
+            <div className="flex flex-col leading-none">
+              <span className="text-2xl font-black tracking-tight bg-gradient-to-r from-[hsl(25,90%,50%)] to-[hsl(248,56%,29%)] bg-clip-text text-transparent">
+                CHURD
+              </span>
+              <span className="text-[9px] font-semibold text-[hsl(248,56%,29%)] tracking-wide uppercase leading-tight">
+                Centre for Human Resource Development Africa
+              </span>
             </div>
-            <span className="text-xl font-bold text-foreground">Tap HR Solutions</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button 
+            <button
               onClick={() => scrollToSection('about')}
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
             >
-              About
+              About Us
             </button>
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-muted-foreground hover:text-primary transition-colors"
+            <button
+              onClick={() => scrollToSection('programmes')}
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
             >
-              Services
+              Learning & Development
             </button>
-            <button 
-              onClick={() => scrollToSection('values')}
-              className="text-muted-foreground hover:text-primary transition-colors"
+            <button
+              onClick={() => scrollToSection('programmes')}
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
             >
-              Values
+              Programmes
             </button>
-            <button 
+            <button
+              onClick={() => scrollToSection('partners')}
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+            >
+              Partnerships
+            </button>
+            <button
               onClick={() => scrollToSection('contact')}
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
             >
-              Contact
+              Contact Us
             </button>
-            <Button variant="professional" size="sm">
-              Get Started
+            <Button
+              onClick={() => scrollToSection('contact')}
+              className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm font-semibold"
+              size="sm"
+            >
+              Join Our Community
             </Button>
           </nav>
 
@@ -71,32 +86,42 @@ const Header = () => {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
-              <button 
+              <button
                 onClick={() => scrollToSection('about')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
+                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
               >
-                About
+                About Us
               </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
+              <button
+                onClick={() => scrollToSection('programmes')}
+                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
               >
-                Services
+                Learning & Development
               </button>
-              <button 
-                onClick={() => scrollToSection('values')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
+              <button
+                onClick={() => scrollToSection('programmes')}
+                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
               >
-                Values
+                Programmes
               </button>
-              <button 
+              <button
+                onClick={() => scrollToSection('partners')}
+                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
+              >
+                Partnerships
+              </button>
+              <button
                 onClick={() => scrollToSection('contact')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors"
+                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
               >
-                Contact
+                Contact Us
               </button>
-              <Button variant="professional" size="sm" className="w-fit">
-                Get Started
+              <Button
+                onClick={() => scrollToSection('contact')}
+                className="bg-accent hover:bg-accent/90 text-accent-foreground w-fit text-sm font-semibold"
+                size="sm"
+              >
+                Join Our Community
               </Button>
             </div>
           </nav>

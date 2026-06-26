@@ -15,36 +15,36 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 15%;
 
-    --primary: 210 100% 40%;
+    --primary: 248 56% 29%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 210 100% 35%;
+    --primary-hover: 248 56% 22%;
 
-    --secondary: 210 25% 95%;
-    --secondary-foreground: 220 15% 15%;
+    --secondary: 248 30% 95%;
+    --secondary-foreground: 248 40% 20%;
 
-    --muted: 210 15% 96%;
+    --muted: 248 15% 96%;
     --muted-foreground: 220 10% 45%;
 
-    --accent: 25 85% 55%;
+    --accent: 25 90% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 210 100% 40%;
+    --border: 248 20% 88%;
+    --input: 248 20% 88%;
+    --ring: 248 56% 29%;
 
-    /* Professional gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 40%), hsl(220 100% 50%));
-    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 15% 98%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 25% 98%));
+    /* CHURD Africa gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(25 90% 50%), hsl(248 56% 29%));
+    --gradient-section: linear-gradient(180deg, hsl(0 0% 100%), hsl(248 15% 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(248 25% 98%));
 
-    /* Professional shadows - inspired by major consultancy sites */
-    --shadow-card: 0 4px 25px -5px hsl(210 25% 25% / 0.12);
-    --shadow-button: 0 4px 14px -2px hsl(210 100% 40% / 0.25);
-    --shadow-hero: 0 25px 50px -12px hsl(210 100% 40% / 0.25);
-    --shadow-elevated: 0 10px 40px -10px hsl(210 25% 25% / 0.15);
+    /* Shadows */
+    --shadow-card: 0 4px 25px -5px hsl(248 40% 20% / 0.12);
+    --shadow-button: 0 4px 14px -2px hsl(25 90% 50% / 0.30);
+    --shadow-hero: 0 25px 50px -12px hsl(248 56% 29% / 0.30);
+    --shadow-elevated: 0 10px 40px -10px hsl(248 40% 20% / 0.15);
 
     /* Professional spacing and sizing */
     --section-padding: 5rem 0;

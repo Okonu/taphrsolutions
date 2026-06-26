@@ -5,29 +5,29 @@ import Autoplay from "embla-carousel-autoplay";
 const Values = () => {
   const values = [
     {
-      icon: "🤝",
-      title: "Trust",
-      description: "We build relationships through transparency, ethical practice, professionalism, reliability, and observe confidentiality to deliver value."
-    },
-    {
-      icon: "⚡",
-      title: "Agility", 
-      description: "We adapt to changing client needs and deliver flexible, future-focused solutions."
-    },
-    {
-      icon: "👥",
-      title: "People-Centricity",
-      description: "We strive to deliver solutions customized and aligned to the needs, growth, and well-being of people at all levels."
-    },
-    {
       icon: "⭐",
       title: "Excellence",
-      description: "We strive for the highest standards in every training, every session, every strategy."
+      description: "We set and uphold the highest standards in every learning experience, every session, and every advisory engagement we deliver."
+    },
+    {
+      icon: "🤝",
+      title: "Integrity",
+      description: "We build relationships through transparency, ethical practice, professionalism, and reliability — observing confidentiality to deliver genuine value."
+    },
+    {
+      icon: "💡",
+      title: "Innovation",
+      description: "We embrace technology and creative thinking to design forward-looking solutions that address emerging workplace and development challenges."
     },
     {
       icon: "🤲",
       title: "Collaboration",
-      description: "We listen, co-create, and partner with clients to ensure relevance and ownership."
+      description: "We listen, co-create, and partner with clients, governments, and institutions to ensure relevance, ownership, and lasting impact."
+    },
+    {
+      icon: "✅",
+      title: "Accountability",
+      description: "We take responsibility for outcomes and measure our success by the tangible improvements we create in the organizations and people we serve."
     }
   ];
 
@@ -39,9 +39,9 @@ const Values = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
               Core Values
             </h2>
+            <div className="w-16 h-1 bg-accent mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Our values guide every decision we make and every relationship we build. 
-              They form the foundation of our commitment to excellence and ethical practice.
+              Our values guide every decision we make and every relationship we build — forming the foundation of our commitment to transformative impact across Africa.
             </p>
           </div>
 
@@ -60,12 +60,12 @@ const Values = () => {
             <CarouselContent className="-ml-2 md:-ml-4">
               {values.map((value, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
-                  <Card className="shadow-card hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 h-full">
-                    <CardContent className="p-6 text-center h-full flex flex-col">
-                      <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <Card className="shadow-card hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 h-full border-t-4 border-t-accent/60">
+                    <CardContent className="p-8 text-center h-full flex flex-col">
+                      <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                         {value.icon}
                       </div>
-                      <h3 className="text-lg font-bold text-foreground mb-3">
+                      <h3 className="text-xl font-bold text-primary mb-3">
                         {value.title}
                       </h3>
                       <p className="text-muted-foreground text-sm leading-relaxed flex-grow">

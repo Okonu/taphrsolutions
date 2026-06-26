@@ -1,39 +1,25 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
 
 const Services = () => {
-  const trainingServices = [
-    "Leadership and Executive Development",
-    "Team Dynamics and Collaboration", 
-    "Emotional Intelligence and Self-Leadership",
-    "Customer Service and Client Experience",
-    "Strategic Communication and Influence",
-    "Workplace Ethics and Integrity Building",
-    "Performance and Productivity Enhancement",
-    "Leadership styles and Conflict Resolution",
-    "Change management and Strategy Alignment",
-    "HR for non HR professionals",
-    "Employee wellness and Productivity",
-    "Data Driven HR to Optimize performance",
-    "Tailored In-House Training Programs"
+  const learningDevelopment = [
+    { icon: "👔", title: "Executive Development", desc: "High-impact programmes for senior leaders and executives driving institutional transformation." },
+    { icon: "🏆", title: "Professional Certification Programmes", desc: "Accredited certifications that validate expertise and advance professional careers." },
+    { icon: "🤝", title: "Mentorship Programmes", desc: "Structured mentorship connecting emerging professionals with experienced leaders." },
+    { icon: "🏢", title: "Corporate Training", desc: "Tailored in-house training solutions designed around your organization's specific needs." },
+    { icon: "💻", title: "E-Learning Academy", desc: "Flexible, technology-enabled learning solutions accessible anytime, anywhere." },
   ];
 
-  const consultancyServices = [
-    "Organizational Development and Culture Change",
-    "Talent Management and Succession Planning",
-    "Performance Management Frameworks",
-    "Organizational Restructuring and Job Evaluation",
-    "HR Policy and Compliance Advisory",
-    "Workforce Planning and Capability Assessment",
-    "Staff Engagement and Retention Strategies",
-    "Change Management and Strategy Alignment",
-    "Succession Planning and Workforce Planning",
-    "Staff Engagement and Culture Transformation",
-    "HR Risks and Risk Management", 
-    "HR policy Development and Compliance",
-    "Performance Management Frameworks"
+  const programmes = [
+    { icon: "👥", title: "Human Capital Development", desc: "Comprehensive strategies for attracting, developing, and retaining top talent." },
+    { icon: "📊", title: "Strategic HR Management", desc: "Equipping HR professionals with strategic skills to align people practices with business goals." },
+    { icon: "🎖️", title: "Leadership Excellence Academy", desc: "A flagship programme building transformational leadership capacity at all levels." },
+    { icon: "⚖️", title: "Governance and Ethics Training", desc: "Building institutional integrity through sound governance principles and ethical leadership." },
+    { icon: "🏛️", title: "Public Sector Capacity Building", desc: "Specialized programmes strengthening the capabilities of government institutions and civil servants." },
+    { icon: "🛡️", title: "Risk Management", desc: "Practical frameworks for identifying, assessing, and managing organizational risks." },
+    { icon: "🌅", title: "Retirement Programme", desc: "Preparing employees for fulfilling and financially secure retirement transitions." },
+    { icon: "🤖", title: "AI Tools for the Workplace", desc: "Equipping professionals with practical AI literacy and tools for modern workplace productivity." },
   ];
 
   const scrollToContact = () => {
@@ -44,90 +30,80 @@ const Services = () => {
   };
 
   return (
-    <section id="services" className="py-20 bg-gradient-section">
+    <section id="programmes" className="py-20 bg-gradient-section">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-              Our Services
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              What We Offer
             </h2>
+            <div className="w-16 h-1 bg-accent mx-auto mb-6 rounded-full"></div>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              We offer comprehensive training solutions and strategic consultancy services 
-              designed to unlock your organization's full potential.
+              Comprehensive, technology-enabled learning and development solutions designed to unlock your organization's full potential and drive lasting transformation.
             </p>
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <Tabs defaultValue="training" className="w-full mb-12">
+            <Tabs defaultValue="learning" className="w-full mb-12">
               <TabsList className="grid w-full max-w-lg mx-auto grid-cols-2 mb-12 h-14 p-1 bg-muted/50">
-                <TabsTrigger value="training" className="flex items-center gap-3 h-12 px-6 data-[state=active]:bg-background data-[state=active]:shadow-sm text-base font-medium">
-                  <span className="text-xl">🎓</span>
-                  Training Solutions
+                <TabsTrigger value="learning" className="flex items-center gap-2 h-12 px-4 data-[state=active]:bg-background data-[state=active]:shadow-sm text-sm font-medium">
+                  <span className="text-lg">🎓</span>
+                  Learning & Development
                 </TabsTrigger>
-                <TabsTrigger value="consultancy" className="flex items-center gap-3 h-12 px-6 data-[state=active]:bg-background data-[state=active]:shadow-sm text-base font-medium">
-                  <span className="text-xl">💼</span>
-                  Consultancy Services
+                <TabsTrigger value="programmes" className="flex items-center gap-2 h-12 px-4 data-[state=active]:bg-background data-[state=active]:shadow-sm text-sm font-medium">
+                  <span className="text-lg">📚</span>
+                  Programmes
                 </TabsTrigger>
               </TabsList>
 
-              <TabsContent value="training" className="animate-fade-in">
-                <div className="text-center mb-12">
-                  <div className="w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-primary-foreground text-4xl">🎓</span>
+              <TabsContent value="learning" className="animate-fade-in">
+                <div className="text-center mb-10">
+                  <div className="w-20 h-20 bg-gradient-hero rounded-2xl flex items-center justify-center mx-auto mb-5">
+                    <span className="text-white text-4xl">🎓</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-foreground mb-4">Training Solutions</h3>
+                  <h3 className="text-3xl font-bold text-foreground mb-3">Learning & Development</h3>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Comprehensive learning programs designed to unlock potential and drive performance across your organization
+                    Innovative, learner-centred programmes designed to build capability and unlock potential at every level.
                   </p>
                 </div>
-                
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
-                  {trainingServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary hover:border-l-primary-hover">
+                  {learningDevelopment.map((item, index) => (
+                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary hover:-translate-y-1">
                       <CardContent className="p-6">
-                        <div className="flex items-start gap-4">
-                          <div className="w-3 h-3 bg-primary rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                          <div>
-                            <h4 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                              {service}
-                            </h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                              Expert-led training to enhance capabilities and drive results
-                            </p>
-                          </div>
-                        </div>
+                        <div className="text-3xl mb-3">{item.icon}</div>
+                        <h4 className="font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.desc}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
                 </div>
               </TabsContent>
 
-              <TabsContent value="consultancy" className="animate-fade-in">
-                <div className="text-center mb-12">
-                  <div className="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-6">
-                    <span className="text-accent-foreground text-4xl">💼</span>
+              <TabsContent value="programmes" className="animate-fade-in">
+                <div className="text-center mb-10">
+                  <div className="w-20 h-20 bg-accent rounded-2xl flex items-center justify-center mx-auto mb-5">
+                    <span className="text-white text-4xl">📚</span>
                   </div>
-                  <h3 className="text-3xl font-bold text-foreground mb-4">Consultancy Services</h3>
+                  <h3 className="text-3xl font-bold text-foreground mb-3">Programmes</h3>
                   <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                    Strategic consulting solutions to transform your organization and optimize performance
+                    Specialized development programmes that strengthen human capital and institutional capacity across Africa.
                   </p>
                 </div>
-                
                 <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6 mb-8">
-                  {consultancyServices.map((service, index) => (
-                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-accent hover:border-l-accent/80">
+                  {programmes.map((item, index) => (
+                    <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-accent hover:-translate-y-1">
                       <CardContent className="p-6">
-                        <div className="flex items-start gap-4">
-                          <div className="w-3 h-3 bg-accent rounded-full mt-2 flex-shrink-0 group-hover:scale-125 transition-transform"></div>
-                          <div>
-                            <h4 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
-                              {service}
-                            </h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed">
-                              Strategic guidance to drive organizational transformation
-                            </p>
-                          </div>
-                        </div>
+                        <div className="text-3xl mb-3">{item.icon}</div>
+                        <h4 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
+                          {item.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {item.desc}
+                        </p>
                       </CardContent>
                     </Card>
                   ))}
@@ -139,10 +115,14 @@ const Services = () => {
           {/* CTA */}
           <div className="text-center">
             <p className="text-lg text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your organization? Let's discuss how our solutions can help you achieve your goals.
+              Ready to strengthen your institution? Partner with CHURD Africa today.
             </p>
-            <Button variant="professional" size="lg" onClick={scrollToContact}>
-              Get Custom Solution
+            <Button
+              size="lg"
+              onClick={scrollToContact}
+              className="bg-accent hover:bg-accent/90 text-white font-semibold shadow-button"
+            >
+              Partner With Us
             </Button>
           </div>
         </div>
