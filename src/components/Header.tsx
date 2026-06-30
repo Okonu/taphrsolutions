@@ -14,116 +14,101 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-sm">
-      <div className="container mx-auto px-6 py-3">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Top contact bar */}
+      <div className="bg-primary text-primary-foreground py-2 px-6">
+        <div className="container mx-auto flex items-center justify-between text-xs">
+          <div className="flex items-center gap-6">
+            <span>📧 info@churdafrica.com</span>
+            <span className="hidden sm:inline">🌐 www.churdafrica.com</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <span className="hidden sm:inline text-primary-foreground/70">Follow us:</span>
+            {["LinkedIn", "Twitter", "Facebook"].map((s) => (
+              <button key={s} className="text-primary-foreground/80 hover:text-accent transition-colors font-medium">
+                {s}
+              </button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Main navbar */}
+      <div className="bg-white border-b border-gray-100 shadow-sm">
+        <div className="container mx-auto px-6 py-2">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
             <img
               src={churdLogo}
-              alt="CHURD Africa – Centre for Human Resource Development Africa"
-              className="h-20 w-auto object-contain"
+              alt="CHURD Africa"
+              className="h-20 w-auto object-contain cursor-pointer"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />
-          </div>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-            >
-              About Us
-            </button>
-            <button
-              onClick={() => scrollToSection('programmes')}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-            >
-              Learning & Development
-            </button>
-            <button
-              onClick={() => scrollToSection('programmes')}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-            >
-              Programmes
-            </button>
-            <button
-              onClick={() => scrollToSection('partners')}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-            >
-              Partnerships
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-            >
-              Contact Us
-            </button>
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="bg-accent hover:bg-accent/90 text-accent-foreground text-sm font-semibold"
-              size="sm"
-            >
-              Join Our Community
-            </Button>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <div className="w-6 h-6 flex flex-col justify-center space-y-1">
-              <div className={`h-0.5 bg-foreground transition-all ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`}></div>
-              <div className={`h-0.5 bg-foreground transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></div>
-              <div className={`h-0.5 bg-foreground transition-all ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></div>
-            </div>
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-            <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection('about')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-              >
-                About Us
-              </button>
-              <button
-                onClick={() => scrollToSection('programmes')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-              >
-                Learning & Development
-              </button>
-              <button
-                onClick={() => scrollToSection('programmes')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-              >
-                Programmes
-              </button>
-              <button
-                onClick={() => scrollToSection('partners')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-              >
-                Partnerships
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="text-left text-muted-foreground hover:text-primary transition-colors text-sm font-medium"
-              >
-                Contact Us
-              </button>
+            {/* Desktop nav */}
+            <nav className="hidden md:flex items-center gap-8">
+              {[
+                { label: "About Us", id: "about" },
+                { label: "Our Solutions", id: "programmes" },
+                { label: "Partnerships", id: "partners" },
+                { label: "Testimonials", id: "testimonials" },
+                { label: "Contact Us", id: "contact" },
+              ].map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className="text-sm font-semibold text-gray-700 hover:text-accent transition-colors uppercase tracking-wide"
+                >
+                  {link.label}
+                </button>
+              ))}
               <Button
                 onClick={() => scrollToSection('contact')}
-                className="bg-accent hover:bg-accent/90 text-accent-foreground w-fit text-sm font-semibold"
-                size="sm"
+                className="bg-accent hover:bg-accent/90 text-white font-semibold text-sm uppercase tracking-wide px-6"
               >
-                Join Our Community
+                Get Started
               </Button>
-            </div>
-          </nav>
-        )}
+            </nav>
+
+            {/* Mobile toggle */}
+            <button className="md:hidden p-2" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <div className={`h-0.5 bg-gray-700 transition-all ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+                <div className={`h-0.5 bg-gray-700 transition-all ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+                <div className={`h-0.5 bg-gray-700 transition-all ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+              </div>
+            </button>
+          </div>
+
+          {/* Mobile menu */}
+          {isMenuOpen && (
+            <nav className="md:hidden py-4 border-t border-gray-100 mt-2">
+              <div className="flex flex-col gap-4">
+                {[
+                  { label: "About Us", id: "about" },
+                  { label: "Our Solutions", id: "programmes" },
+                  { label: "Partnerships", id: "partners" },
+                  { label: "Testimonials", id: "testimonials" },
+                  { label: "Contact Us", id: "contact" },
+                ].map((link) => (
+                  <button
+                    key={link.id}
+                    onClick={() => scrollToSection(link.id)}
+                    className="text-left text-sm font-semibold text-gray-700 hover:text-accent transition-colors uppercase tracking-wide"
+                  >
+                    {link.label}
+                  </button>
+                ))}
+                <Button
+                  onClick={() => scrollToSection('contact')}
+                  className="bg-accent hover:bg-accent/90 text-white font-semibold w-fit"
+                >
+                  Get Started
+                </Button>
+              </div>
+            </nav>
+          )}
+        </div>
       </div>
     </header>
   );

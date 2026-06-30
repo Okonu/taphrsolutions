@@ -1,184 +1,123 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import churdLogo from "@/assets/churd-logo.jpeg";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-section">
+    <section id="contact" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Contact Us
-            </h2>
-            <div className="w-16 h-1 bg-accent mx-auto mb-6 rounded-full"></div>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Ready to strengthen your institution? Partner with CHURD Africa today and transform your people, teams, and organization.
+          <div className="text-center mb-16">
+            <p className="text-accent font-semibold uppercase tracking-widest text-sm mb-3">Get In Touch</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Contact Us</h2>
+            <div className="w-16 h-1 bg-accent mx-auto rounded-full mb-6"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Ready to strengthen your institution? Partner with CHURD Africa today.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8 mb-12">
-            {/* Company Info */}
-            <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-fade-in lg:col-span-1">
-              <CardHeader className="text-center">
-                <img
-                  src={churdLogo}
-                  alt="CHURD Africa"
-                  className="h-24 w-auto object-contain mx-auto mb-2"
-                />
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="space-y-3">
-                  <div className="flex items-center p-3 rounded-lg bg-muted">
-                    <span className="text-xl mr-3">📧</span>
-                    <div>
-                      <p className="font-medium text-foreground text-sm">info@churdafrica.com</p>
-                    </div>
-                  </div>
+          <div className="grid lg:grid-cols-5 gap-10">
+            {/* Info panel */}
+            <div className="lg:col-span-2 bg-primary rounded-2xl p-10 text-white flex flex-col">
+              <img src={churdLogo} alt="CHURD Africa" className="h-20 w-auto object-contain bg-white rounded-lg p-2 mb-8" />
 
-                  <div className="flex items-center p-3 rounded-lg bg-muted">
-                    <span className="text-xl mr-3">📍</span>
-                    <div>
-                      <p className="font-medium text-foreground text-sm">Africa</p>
-                    </div>
-                  </div>
+              <h3 className="text-xl font-bold mb-6">Contact Information</h3>
 
-                  <div className="flex items-center p-3 rounded-lg bg-muted">
-                    <span className="text-xl mr-3">🌐</span>
-                    <div>
-                      <p className="font-medium text-foreground text-sm">www.churdafrica.com</p>
-                    </div>
+              <div className="space-y-5 flex-grow">
+                <div className="flex items-start gap-4">
+                  <span className="text-accent text-xl mt-0.5">📧</span>
+                  <div>
+                    <p className="text-xs text-primary-foreground/60 uppercase tracking-wide mb-0.5">Email</p>
+                    <p className="font-medium">info@churdafrica.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-accent text-xl mt-0.5">🌐</span>
+                  <div>
+                    <p className="text-xs text-primary-foreground/60 uppercase tracking-wide mb-0.5">Website</p>
+                    <p className="font-medium">www.churdafrica.com</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
+                  <span className="text-accent text-xl mt-0.5">🌍</span>
+                  <div>
+                    <p className="text-xs text-primary-foreground/60 uppercase tracking-wide mb-0.5">Location</p>
+                    <p className="font-medium">Africa</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10 pt-6 border-t border-white/15">
+                <p className="text-sm font-semibold text-primary-foreground/70 mb-3 uppercase tracking-wide">Follow Us</p>
+                <div className="flex gap-3">
+                  {["LinkedIn", "Twitter", "Facebook"].map((s) => (
+                    <button key={s} className="text-xs px-3 py-1.5 rounded-full border border-white/20 hover:bg-accent hover:border-accent transition-colors font-medium">
+                      {s}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Form */}
+            <div className="lg:col-span-3 bg-gray-50 rounded-2xl p-10">
+              <h3 className="text-2xl font-bold text-foreground mb-2">Send an Inquiry</h3>
+              <p className="text-muted-foreground text-sm mb-8">Fill in the form and our team will get back to you within 24 hours.</p>
+
+              <div className="space-y-5">
+                <div className="grid sm:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-sm font-semibold text-foreground mb-2">First Name *</label>
+                    <input type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none bg-white transition-all" placeholder="John" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-foreground mb-2">Last Name *</label>
+                    <input type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none bg-white transition-all" placeholder="Doe" />
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-border">
-                  <p className="text-sm font-medium text-foreground mb-3">Follow Us</p>
-                  <div className="flex gap-2 flex-wrap">
-                    <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                      LinkedIn
-                    </Badge>
-                    <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                      Twitter
-                    </Badge>
-                    <Badge variant="secondary" className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors">
-                      Facebook
-                    </Badge>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Inquiry Form */}
-            <Card className="shadow-card hover:shadow-lg transition-all duration-300 animate-scale-in lg:col-span-2">
-              <CardHeader>
-                <div className="text-center mb-4">
-                  <div className="w-16 h-16 bg-accent rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <span className="text-white text-2xl">💬</span>
-                  </div>
-                  <CardTitle className="text-2xl text-foreground">Send an Inquiry</CardTitle>
-                  <p className="text-muted-foreground mt-2">Partner with CHURD Africa — we'd love to hear from you.</p>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">First Name *</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
-                      placeholder="John"
-                    />
+                    <label className="block text-sm font-semibold text-foreground mb-2">Email *</label>
+                    <input type="email" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none bg-white transition-all" placeholder="john@organization.com" />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Last Name *</label>
-                    <input
-                      type="text"
-                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
-                      placeholder="Doe"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Email *</label>
-                    <input
-                      type="email"
-                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
-                      placeholder="john@organization.com"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Phone</label>
-                    <input
-                      type="tel"
-                      className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
-                      placeholder="+XXX XXX XXX XXX"
-                    />
+                    <label className="block text-sm font-semibold text-foreground mb-2">Phone</label>
+                    <input type="tel" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none bg-white transition-all" placeholder="+XXX XXX XXX XXX" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">Organization</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary"
-                    placeholder="Your Organization"
-                  />
+                  <label className="block text-sm font-semibold text-foreground mb-2">Organization</label>
+                  <input type="text" className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none bg-white transition-all" placeholder="Your Organization" />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">How can we help you? *</label>
-                  <textarea
-                    rows={4}
-                    className="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-ring transition-all bg-background text-foreground hover:border-primary resize-none"
-                    placeholder="Tell us about your learning, development, or advisory needs..."
-                  />
+                  <label className="block text-sm font-semibold text-foreground mb-2">How can we help? *</label>
+                  <textarea rows={4} className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-accent/30 focus:border-accent outline-none bg-white transition-all resize-none" placeholder="Tell us about your learning, development, or advisory needs..." />
                 </div>
 
-                <Button
-                  size="lg"
-                  className="w-full bg-accent hover:bg-accent/90 text-white font-semibold shadow-button"
-                >
-                  <span className="mr-2">Send Message</span>
-                  <span>→</span>
+                <Button className="w-full bg-accent hover:bg-accent/90 text-white font-bold uppercase tracking-wide py-4 text-sm shadow-button">
+                  Send Message ›
                 </Button>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
 
-          {/* Quick Actions */}
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card className="shadow-card hover:shadow-lg transition-all duration-300 group cursor-pointer">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-gradient-hero rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <span className="text-white text-xl">📅</span>
+          {/* Quick action strip */}
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {[
+              { icon: "📅", title: "Training Calendar", desc: "View upcoming training sessions and register your team", bg: "bg-primary" },
+              { icon: "🎙️", title: "Conferences & Webinars", desc: "Join our knowledge events across Africa", bg: "bg-accent" },
+              { icon: "🤝", title: "Corporate Partnerships", desc: "Explore strategic co-development opportunities", bg: "bg-primary" },
+            ].map((item, i) => (
+              <div key={i} className={`${item.bg} rounded-xl p-6 text-white flex items-center gap-5 cursor-pointer hover:opacity-90 transition-opacity`}>
+                <span className="text-3xl">{item.icon}</span>
+                <div>
+                  <h4 className="font-bold text-sm mb-1">{item.title}</h4>
+                  <p className="text-xs text-white/70">{item.desc}</p>
                 </div>
-                <h3 className="font-semibold text-foreground mb-2">Upcoming Trainings</h3>
-                <p className="text-sm text-muted-foreground">View our training calendar and register</p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-card hover:shadow-lg transition-all duration-300 group cursor-pointer">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <span className="text-white text-xl">🎙️</span>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Conferences & Webinars</h3>
-                <p className="text-sm text-muted-foreground">Join our knowledge events and webinars</p>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-card hover:shadow-lg transition-all duration-300 group cursor-pointer">
-              <CardContent className="p-6 text-center">
-                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                  <span className="text-white text-xl">🤝</span>
-                </div>
-                <h3 className="font-semibold text-foreground mb-2">Corporate Partnerships</h3>
-                <p className="text-sm text-muted-foreground">Explore strategic partnership opportunities</p>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
           </div>
         </div>
       </div>
