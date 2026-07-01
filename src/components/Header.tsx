@@ -57,7 +57,7 @@ const Header = () => {
                 <button
                   key={link.id}
                   onClick={() => scrollToSection(link.id)}
-                  className="text-sm font-semibold text-gray-700 hover:text-accent transition-colors uppercase tracking-wide"
+                  className="text-sm font-semibold text-gray-900 hover:text-accent transition-colors uppercase tracking-wide"
                 >
                   {link.label}
                 </button>
@@ -94,7 +94,7 @@ const Header = () => {
                   <button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
-                    className="text-left text-sm font-semibold text-gray-700 hover:text-accent transition-colors uppercase tracking-wide"
+                    className="text-left text-sm font-semibold text-gray-900 hover:text-accent transition-colors uppercase tracking-wide"
                   >
                     {link.label}
                   </button>

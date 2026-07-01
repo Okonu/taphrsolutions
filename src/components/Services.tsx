@@ -51,7 +51,7 @@ const Services = () => {
               className={`py-5 px-8 text-sm font-bold uppercase tracking-wide border-b-4 transition-all ${
                 activeTab === tab
                   ? "border-accent text-accent"
-                  : "border-transparent text-gray-500 hover:text-gray-800"
+                  : "border-transparent text-gray-800 hover:text-gray-900"
               }`}
             >
               {tab === "learning" ? "Learning & Development" : "Programmes"}
