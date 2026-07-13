@@ -28,7 +28,7 @@ const Hero = () => {
           <p className="text-accent font-semibold uppercase tracking-widest text-sm mb-5">
             Empowering People · Strengthening Institutions
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-5">
+          <h1 className="text-4xl md:text-5xl font-black uppercase leading-tight mb-5">
             Advancing Learning,
             <br />
             <span className="text-accent">Transforming</span>
