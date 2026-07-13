@@ -16,15 +16,14 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top contact bar */}
-      <div className="bg-primary text-primary-foreground py-2 px-6">
-        <div className="container mx-auto flex items-center justify-between text-xs">
+      <div className="bg-primary text-primary-foreground py-2 px-10">
+        <div className="w-full flex items-center justify-between text-xs">
           <div className="flex items-center gap-6">
             <span>📧 info@churdafrica.com</span>
-            <span className="hidden sm:inline">🌐 www.churdafrica.com</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="hidden sm:inline text-primary-foreground/70">Follow us:</span>
-            {["LinkedIn", "Twitter", "Facebook"].map((s) => (
+            {["LinkedIn", "X", "Facebook"].map((s) => (
               <button key={s} className="text-primary-foreground/80 hover:text-accent transition-colors font-medium">
                 {s}
               </button>
